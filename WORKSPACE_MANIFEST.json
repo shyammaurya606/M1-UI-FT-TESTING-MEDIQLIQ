@@ -12,7 +12,7 @@
     "Government: [CRT_ABHA_114](#crt_abha_114) or [CRT_ABHA_115](#crt_abha_115) is mandatory. Private: optional.": 1,
     "Government: [CRT_ABHA_308](#crt_abha_308) or [CRT_ABHA_309](#crt_abha_309) is mandatory. Private: optional.": 1
   },
-  "note": "Applicability classification is an initial interpretation of source markings and is subject to test-lead review.",
+  "note": "The exact source catalogue is preserved in sources/m1-catalogue-source.txt. Case data is parsed from the accompanying 100-case inventory workbook derived from that source. Classification is an initial interpretation; CRT_ABHA_112 requires explicit applicability review.",
   "sectionCount": 17,
   "filesWritten": 19,
   "conditionalApplicabilityDecisionsPending": 1
