@@ -1,0 +1,19 @@
+{
+  "fileCount": 19,
+  "catalogueCases": 100,
+  "sections": 17,
+  "sourceSha256": "69551da790f17f50c7dae920f4f652b65fe90fbb383593bd951543d71e1be3d8",
+  "initialPrivateMandatoryCount": 39,
+  "exactMarkingCounts": {
+    "Mandatory": 37,
+    "Optional": 59,
+    "Mandatory for Private /Government (Optional only if integrated program using demo auth as they have default ABHA address generated)": 1,
+    "Mandatory for Private": 1,
+    "Government: [CRT_ABHA_114](#crt_abha_114) or [CRT_ABHA_115](#crt_abha_115) is mandatory. Private: optional.": 1,
+    "Government: [CRT_ABHA_308](#crt_abha_308) or [CRT_ABHA_309](#crt_abha_309) is mandatory. Private: optional.": 1
+  },
+  "note": "Applicability classification is an initial interpretation of source markings and is subject to test-lead review.",
+  "sectionCount": 17,
+  "filesWritten": 19,
+  "conditionalApplicabilityDecisionsPending": 1
+}
