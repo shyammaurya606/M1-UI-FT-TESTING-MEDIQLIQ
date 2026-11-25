@@ -99,6 +99,7 @@ async function main(){
       }
       const start=responseEvents.length;
       await ask('Perform the steps manually in Chromium; check the actual UI and required persisted/backend state. Press ENTER when complete: ');
+      await new Promise(resolve=>setTimeout(resolve,350));
       const ids=responseEvents.slice(start);
       const verdict=(await ask('Verdict [PASS / FAIL / BLOCKED / NOT APPLICABLE / NOT RUN]: ')).toUpperCase();
       let outcome;
@@ -112,7 +113,7 @@ async function main(){
         if(!reason||(verdict==='NOT APPLICABLE'&&c.privateEntityApplicability==='mandatory'&&!approvedBy)){
           outcome={status:'NOT RUN',recordedAt:stamp(),note:'Required reason/approver missing.'};
         }else{
-          outcome={status:verdict,recordedAt:stamp(),reason:redact(reason),approvedBy:approvedBy||null,evidenceReference:await ask('Optional non-identifying evidence reference: ')||null,requestIds:ids,tester};
+          outcome={status:verdict,recordedAt:stamp(),reason:redact(reason),approvedBy:approvedBy||null,evidenceReference:redact(await ask('Optional non-identifying evidence reference: '))||null,requestIds:ids,tester};
         }
       }else{
         const observed=await ask('Observed outcome (no personal/authentication data): ');
@@ -125,7 +126,7 @@ async function main(){
             const ed=path.join(dir,'evidence',c.caseId);fs.mkdirSync(ed,{recursive:true,mode:0o700});
             const file=path.join(ed,safeId()+'.png');await page.screenshot({path:file,fullPage:true});screenshot=path.relative(dir,file).split(path.sep).join('/');
           }
-          outcome={status:verdict,recordedAt:stamp(),observedOutcome:redact(observed),evidenceReference:evidence,screenshot,requestIds:ids,tester};
+          outcome={status:verdict,recordedAt:stamp(),observedOutcome:redact(observed),evidenceReference:redact(evidence),screenshot,requestIds:ids,tester};
         }
       }
       run.outcomes[c.caseId]=outcome;
