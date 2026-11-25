@@ -1,5 +1,5 @@
 {
-  "fileCount": 19,
+  "fileCount": 20,
   "catalogueCases": 100,
   "sections": 17,
   "sourceSha256": "69551da790f17f50c7dae920f4f652b65fe90fbb383593bd951543d71e1be3d8",
@@ -14,6 +14,12 @@
   },
   "note": "The exact source catalogue is preserved in sources/m1-catalogue-source.txt. Case data is parsed from the accompanying 100-case inventory workbook derived from that source. Classification is an initial interpretation; CRT_ABHA_112 requires explicit applicability review.",
   "sectionCount": 17,
-  "filesWritten": 19,
-  "conditionalApplicabilityDecisionsPending": 1
+  "filesWritten": 20,
+  "conditionalApplicabilityDecisionsPending": 1,
+  "validation": {
+    "catalogue": "100 unique case IDs across 17 sections; verified by GitHub Actions",
+    "javascriptSyntax": "node --check passed for preflight, runner, and report scripts",
+    "reportSmokeTest": "synthetic empty-run fixture generated a 100-case report and correctly failed the mandatory gate",
+    "liveUiExecution": "not yet performed"
+  }
 }
