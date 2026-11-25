@@ -15,4 +15,4 @@ jobs:
         with:
           node-version: 20
       - name: Validate catalogue and JavaScript syntax
-        run: npm run validate
+        run: npm run validate && npm run smoke:report
