@@ -29,6 +29,7 @@ npm install
 npx playwright install chromium
 Copy-Item .env.example .env
 notepad .env
+npm run validate
 npm run preflight
 npm run test:ui
 ```
@@ -75,7 +76,7 @@ The report prints a fresh run summary and evaluates the private-entity mandatory
 - `runs/` is ignored by Git. Do not commit raw screenshots, patient records, API payloads, OTPs, Aadhaar/mobile numbers, or tokens.
 - Screenshot capture requires a separate explicit confirmation that the current screen contains no unmasked personal or authentication data.
 - Page text is not captured by default.
-- The runner records only selected request-ID response headers, HTTP status, host and a sanitized route. It does not store request or response bodies, cookies, authorization headers, or query strings.
+- The runner records only UUID-shaped IDs exposed in selected response headers, HTTP status, host and a sanitized route. These are response IDs observed by the browser and must not be assumed to be the NHA gateway's own request IDs without backend-log correlation. It does not store request or response bodies, cookies, authorization headers, or query strings.
 - Use only approved ABDM sandbox demo identities. Use synthetic or sandbox test patient records. Do not use real patient data.
 - Confirm that the target and backend are in sandbox before every write-capable flow.
 
@@ -91,6 +92,7 @@ The ABDM MCP was unavailable (HTTP 404) during initial preparation. This workspa
 
 | Command | Purpose |
 |---|---|
+| `npm run validate` | Check 100-case catalogue structure and JavaScript syntax |
 | `npm run preflight` | Verify Node, env, Playwright and sandbox guard |
 | `npm run test:ui` | Start visible human-in-the-loop runner |
 | `npm run report` | Summarize latest run / evaluate private mandatory gate |
