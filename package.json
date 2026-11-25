@@ -11,7 +11,8 @@
     "preflight": "node scripts/preflight.mjs",
     "test:ui": "node scripts/run-m1-ui.mjs",
     "report": "node scripts/report.mjs",
-    "validate": "node scripts/validate-catalogue.mjs && node --check scripts/preflight.mjs && node --check scripts/run-m1-ui.mjs && node --check scripts/report.mjs"
+    "validate": "node scripts/validate-catalogue.mjs && node --check scripts/preflight.mjs && node --check scripts/run-m1-ui.mjs && node --check scripts/report.mjs",
+    "smoke:report": "node scripts/smoke-report.mjs"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
